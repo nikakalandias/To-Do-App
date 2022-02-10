@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-    let toDos = [
+    var toDos = [
     ToDo(title: "Make vanilla puding"),
     ToDo(title: "Put the puding in a mayo"),
     ToDo(title: "Eat it in a public place")
@@ -37,6 +37,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            toDos.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return toDos.count
     }
@@ -46,12 +55,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func addTaskButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Task", message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addTextField { field in
+            field.placeholder = "What you wanna do?"
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "Add", style: UIAlertAction.Style.default, handler: { _ in
+                    
+                    guard let fields = alert.textFields else { return }
+                    let taskField = fields[0]
+                    
+                    guard let task = taskField.text, !task.isEmpty else { return }
+                    
+                    self.toDos.append(ToDo(title: task))
+            
+                    let indexPath1 = IndexPath(row: self.toDos.count - 1, section: 0)
+                    self.tableView.insertRows(at: [indexPath1], with: UITableView.RowAnimation.right)
+                        
+                }))
         
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func editButton(_ sender: Any) {
         
     }
+    
     
     
 
