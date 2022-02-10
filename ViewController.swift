@@ -18,8 +18,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let emojiArray = ["🎃","🥳","🤑","📱","💰","🎄","🔥","⭐️","👋","😎","🌏","☀️","💧","🌊","🍍","🍔","🍩","🍪","🍺","🏆","🎯","🎬","🎈","🎁","🤩","🤙","☘️","🌴","🍎"]
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
          
         tableView.dataSource = self
         tableView.delegate = self
@@ -40,7 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == UITableViewCell.EditingStyle.delete {
+        if editingStyle == .delete {
             toDos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
         }
@@ -78,7 +81,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func editButton(_ sender: Any) {
-        
+        tableView.isEditing = !tableView.isEditing
+}
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+      let todo = toDos.remove(at: sourceIndexPath.row)
+      toDos.insert(todo, at: destinationIndexPath.row)
     }
     
     

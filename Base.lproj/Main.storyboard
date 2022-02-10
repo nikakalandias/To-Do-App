@@ -21,14 +21,14 @@
                                 <rect key="frame" x="0.0" y="112" width="414" height="784"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="K5C-EB-TB6" customClass="TableViewCell" customModule="To_Do_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49.5" width="374" height="44.5"/>
+                                        <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K5C-EB-TB6" id="aIW-ud-Jkb">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-tv-PjU" customClass="BEMCheckBox" customModule="To_Do_App" customModuleProvider="target">
-                                                    <rect key="frame" x="337" y="6.5" width="34" height="31"/>
+                                                    <rect key="frame" x="337" y="6.5" width="34" height="33.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="tintColor" systemColor="systemIndigoColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -56,7 +56,7 @@
                                                         <action selector="checkAction:" destination="K5C-EB-TB6" eventType="valueChanged" id="e16-E4-2fs"/>
                                                     </connections>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Let's do some about it?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-o6-1T2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's do some about it?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-o6-1T2">
                                                     <rect key="frame" x="38" y="11" width="287" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="287" id="lR7-Je-Oiw"/>
@@ -65,7 +65,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="🥳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cm-ez-U8r">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥳" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cm-ez-U8r">
                                                     <rect key="frame" x="9" y="11" width="23" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -78,7 +78,7 @@
                                                 <constraint firstItem="0Cm-ez-U8r" firstAttribute="centerY" secondItem="PfJ-o6-1T2" secondAttribute="centerY" id="HFI-c9-l5X"/>
                                                 <constraint firstItem="0Cm-ez-U8r" firstAttribute="top" secondItem="aIW-ud-Jkb" secondAttribute="topMargin" id="The-bd-Tfq"/>
                                                 <constraint firstItem="PfJ-o6-1T2" firstAttribute="leading" secondItem="0Cm-ez-U8r" secondAttribute="trailing" constant="6" id="k9m-Wb-O2U"/>
-                                                <constraint firstItem="PfJ-o6-1T2" firstAttribute="centerY" secondItem="Yft-tv-PjU" secondAttribute="centerY" id="pZB-P0-ZUW"/>
+                                                <constraint firstItem="PfJ-o6-1T2" firstAttribute="centerY" secondItem="Yft-tv-PjU" secondAttribute="centerY" constant="-1.5" id="pZB-P0-ZUW"/>
                                                 <constraint firstItem="Yft-tv-PjU" firstAttribute="top" secondItem="aIW-ud-Jkb" secondAttribute="topMargin" constant="-4.5" id="sbf-xa-3PX"/>
                                                 <constraint firstItem="0Cm-ez-U8r" firstAttribute="bottom" secondItem="aIW-ud-Jkb" secondAttribute="bottomMargin" id="sm5-nO-esv"/>
                                                 <constraint firstItem="0Cm-ez-U8r" firstAttribute="firstBaseline" secondItem="PfJ-o6-1T2" secondAttribute="firstBaseline" id="xRg-XU-9DM"/>
@@ -167,6 +167,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editOutlet" destination="kaF-Se-Zqe" id="DYd-vS-P7r"/>
                         <outlet property="tableView" destination="WmS-Gl-lcY" id="Pyg-nj-2lJ"/>
                     </connections>
                 </viewController>
@@ -177,7 +178,7 @@
     </scenes>
     <designables>
         <designable name="Yft-tv-PjU">
-            <size key="intrinsicContentSize" width="34" height="31"/>
+            <size key="intrinsicContentSize" width="34" height="33.5"/>
         </designable>
     </designables>
     <resources>
