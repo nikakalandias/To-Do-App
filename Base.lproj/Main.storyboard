@@ -18,16 +18,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WmS-Gl-lcY">
-                                <rect key="frame" x="0.0" y="126" width="414" height="736"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="784"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Igk-vR-Fm1" customClass="TableViewCell" customModule="To_Do_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="K5C-EB-TB6" customClass="TableViewCell" customModule="To_Do_App" customModuleProvider="target">
                                         <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Igk-vR-Fm1" id="8XX-dB-RWA">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K5C-EB-TB6" id="aIW-ud-Jkb">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-tv-PjU" customClass="BEMCheckBox" customModule="To_Do_App" customModuleProvider="target">
+                                                    <rect key="frame" x="331" y="6" width="34" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="onFillColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="offFillColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                                            <color key="value" systemColor="systemIndigoColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
+                                                            <color key="value" systemColor="systemIndigoColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="checkAction:" destination="K5C-EB-TB6" eventType="valueChanged" id="e16-E4-2fs"/>
+                                                    </connections>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's do some about it?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-o6-1T2">
+                                                    <rect key="frame" x="20" y="11" width="303" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkbox" destination="Yft-tv-PjU" id="aUz-oD-Ffp"/>
+                                            <outlet property="taskLabel" destination="PfJ-o6-1T2" id="Q9e-dp-RM8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -77,19 +119,19 @@
                             <constraint firstItem="kaF-Se-Zqe" firstAttribute="bottom" secondItem="4Ld-p0-eSk" secondAttribute="bottom" id="1Qr-ii-IpF"/>
                             <constraint firstItem="kaF-Se-Zqe" firstAttribute="top" secondItem="4Ld-p0-eSk" secondAttribute="top" id="1c0-hN-hMr"/>
                             <constraint firstItem="4Ld-p0-eSk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="47v-e8-Si9"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="5wW-xZ-aPb"/>
+                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="68" id="5wW-xZ-aPb"/>
                             <constraint firstItem="ISu-CW-oIt" firstAttribute="centerX" secondItem="WmS-Gl-lcY" secondAttribute="centerX" id="Mkw-QC-Ht9"/>
                             <constraint firstItem="WmS-Gl-lcY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QNG-cj-QMv"/>
                             <constraint firstItem="kaF-Se-Zqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SyX-aa-zZY"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="ISu-CW-oIt" secondAttribute="bottom" constant="22" id="Xnf-Lq-nkt"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="b7h-CC-WHT"/>
+                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="ISu-CW-oIt" secondAttribute="bottom" constant="8" id="Xnf-Lq-nkt"/>
+                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="68" id="b7h-CC-WHT"/>
                             <constraint firstAttribute="trailing" secondItem="WmS-Gl-lcY" secondAttribute="trailing" id="gHN-EY-Cb3"/>
                             <constraint firstItem="kaF-Se-Zqe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mL7-bN-N2A"/>
                             <constraint firstItem="4Ld-p0-eSk" firstAttribute="leading" secondItem="ISu-CW-oIt" secondAttribute="trailing" constant="53" id="oPy-zN-DCf"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="r1l-wc-8V5"/>
+                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="r1l-wc-8V5"/>
                             <constraint firstItem="ISu-CW-oIt" firstAttribute="leading" secondItem="kaF-Se-Zqe" secondAttribute="trailing" constant="53" id="sYL-P7-SUL"/>
                             <constraint firstItem="ISu-CW-oIt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="u1u-37-8k1"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="kaF-Se-Zqe" secondAttribute="bottom" constant="44" id="wQR-Fa-TsG"/>
+                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="kaF-Se-Zqe" secondAttribute="bottom" constant="30" id="wQR-Fa-TsG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="To Do List" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="always" id="8dx-NE-bPH">
@@ -109,6 +151,11 @@
             <point key="canvasLocation" x="939.13043478260875" y="55.580357142857139"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Yft-tv-PjU">
+            <size key="intrinsicContentSize" width="34" height="31"/>
+        </designable>
+    </designables>
     <resources>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>

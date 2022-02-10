@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     let toDos = [
     ToDo(title: "Make vanilla puding."),
@@ -25,18 +25,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let todo = toDos[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = "🎃"
+        if let customCell = cell as? TableViewCell {
+            customCell.taskLabel.text = todo.title
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return toDos.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
 
 
 }

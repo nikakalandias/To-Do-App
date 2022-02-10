@@ -7,8 +7,10 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell, BEMCheckBoxDelegate {
 
+    @IBOutlet weak var taskLabel: UILabel!
+    @IBOutlet weak var checkbox: BEMCheckBox!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +21,10 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+    @IBAction func checkAction(_ sender: BEMCheckBox) {
+
+        
+}
 
 }
