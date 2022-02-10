@@ -21,15 +21,14 @@
                                 <rect key="frame" x="0.0" y="112" width="414" height="784"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="K5C-EB-TB6" customClass="TableViewCell" customModule="To_Do_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="49.5" width="374" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K5C-EB-TB6" id="aIW-ud-Jkb">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-tv-PjU" customClass="BEMCheckBox" customModule="To_Do_App" customModuleProvider="target">
-                                                    <rect key="frame" x="331" y="6" width="34" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-tv-PjU" customClass="BEMCheckBox" customModule="To_Do_App" customModuleProvider="target">
+                                                    <rect key="frame" x="337" y="6.5" width="34" height="31"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="tintColor" systemColor="systemIndigoColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -57,17 +56,37 @@
                                                         <action selector="checkAction:" destination="K5C-EB-TB6" eventType="valueChanged" id="e16-E4-2fs"/>
                                                     </connections>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's do some about it?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-o6-1T2">
-                                                    <rect key="frame" x="20" y="11" width="303" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Let's do some about it?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-o6-1T2">
+                                                    <rect key="frame" x="38" y="11" width="287" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="287" id="lR7-Je-Oiw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="🥳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cm-ez-U8r">
+                                                    <rect key="frame" x="9" y="11" width="23" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Yft-tv-PjU" secondAttribute="trailing" constant="-17" id="3n2-xi-aWk"/>
+                                                <constraint firstItem="Yft-tv-PjU" firstAttribute="leading" secondItem="PfJ-o6-1T2" secondAttribute="trailing" constant="12" id="5EC-KI-MiG"/>
+                                                <constraint firstItem="0Cm-ez-U8r" firstAttribute="centerY" secondItem="PfJ-o6-1T2" secondAttribute="centerY" id="HFI-c9-l5X"/>
+                                                <constraint firstItem="0Cm-ez-U8r" firstAttribute="top" secondItem="aIW-ud-Jkb" secondAttribute="topMargin" id="The-bd-Tfq"/>
+                                                <constraint firstItem="PfJ-o6-1T2" firstAttribute="leading" secondItem="0Cm-ez-U8r" secondAttribute="trailing" constant="6" id="k9m-Wb-O2U"/>
+                                                <constraint firstItem="PfJ-o6-1T2" firstAttribute="centerY" secondItem="Yft-tv-PjU" secondAttribute="centerY" id="pZB-P0-ZUW"/>
+                                                <constraint firstItem="Yft-tv-PjU" firstAttribute="top" secondItem="aIW-ud-Jkb" secondAttribute="topMargin" constant="-4.5" id="sbf-xa-3PX"/>
+                                                <constraint firstItem="0Cm-ez-U8r" firstAttribute="bottom" secondItem="aIW-ud-Jkb" secondAttribute="bottomMargin" id="sm5-nO-esv"/>
+                                                <constraint firstItem="0Cm-ez-U8r" firstAttribute="firstBaseline" secondItem="PfJ-o6-1T2" secondAttribute="firstBaseline" id="xRg-XU-9DM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="checkbox" destination="Yft-tv-PjU" id="aUz-oD-Ffp"/>
+                                            <outlet property="emojiLabel" destination="0Cm-ez-U8r" id="AAL-O1-Xzz"/>
                                             <outlet property="taskLabel" destination="PfJ-o6-1T2" id="Q9e-dp-RM8"/>
                                         </connections>
                                     </tableViewCell>
@@ -87,11 +106,15 @@
                                     </imageReference>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23" scale="large" weight="heavy"/>
                                 </state>
+                                <connections>
+                                    <action selector="addTaskButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yVh-cv-mNQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaF-Se-Zqe">
                                 <rect key="frame" x="20" y="44" width="44" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="4oA-1n-Ufu"/>
+                                    <constraint firstAttribute="height" constant="38" id="0w7-Pz-MQc"/>
+                                    <constraint firstAttribute="width" constant="44" id="P8M-bH-aI5"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
@@ -105,6 +128,9 @@
                                     </imageReference>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23" scale="large" weight="heavy"/>
                                 </state>
+                                <connections>
+                                    <action selector="editButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uGp-Sy-aWa"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISu-CW-oIt">
                                 <rect key="frame" x="117" y="57" width="180" height="47"/>
@@ -116,22 +142,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kaF-Se-Zqe" firstAttribute="bottom" secondItem="4Ld-p0-eSk" secondAttribute="bottom" id="1Qr-ii-IpF"/>
-                            <constraint firstItem="kaF-Se-Zqe" firstAttribute="top" secondItem="4Ld-p0-eSk" secondAttribute="top" id="1c0-hN-hMr"/>
-                            <constraint firstItem="4Ld-p0-eSk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="47v-e8-Si9"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="68" id="5wW-xZ-aPb"/>
-                            <constraint firstItem="ISu-CW-oIt" firstAttribute="centerX" secondItem="WmS-Gl-lcY" secondAttribute="centerX" id="Mkw-QC-Ht9"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QNG-cj-QMv"/>
-                            <constraint firstItem="kaF-Se-Zqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SyX-aa-zZY"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="ISu-CW-oIt" secondAttribute="bottom" constant="8" id="Xnf-Lq-nkt"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="68" id="b7h-CC-WHT"/>
-                            <constraint firstAttribute="trailing" secondItem="WmS-Gl-lcY" secondAttribute="trailing" id="gHN-EY-Cb3"/>
-                            <constraint firstItem="kaF-Se-Zqe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mL7-bN-N2A"/>
-                            <constraint firstItem="4Ld-p0-eSk" firstAttribute="leading" secondItem="ISu-CW-oIt" secondAttribute="trailing" constant="53" id="oPy-zN-DCf"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="r1l-wc-8V5"/>
-                            <constraint firstItem="ISu-CW-oIt" firstAttribute="leading" secondItem="kaF-Se-Zqe" secondAttribute="trailing" constant="53" id="sYL-P7-SUL"/>
-                            <constraint firstItem="ISu-CW-oIt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="u1u-37-8k1"/>
-                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="kaF-Se-Zqe" secondAttribute="bottom" constant="30" id="wQR-Fa-TsG"/>
+                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="28c-nb-VGN"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="WmS-Gl-lcY" secondAttribute="bottom" constant="-34" id="7QX-od-CFL"/>
+                            <constraint firstItem="ISu-CW-oIt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="9P1-eN-LHq"/>
+                            <constraint firstItem="ISu-CW-oIt" firstAttribute="centerX" secondItem="WmS-Gl-lcY" secondAttribute="centerX" id="KTV-sc-pTh"/>
+                            <constraint firstItem="ISu-CW-oIt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TzV-l5-Ijn"/>
+                            <constraint firstItem="4Ld-p0-eSk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VF2-0B-ibc"/>
+                            <constraint firstItem="kaF-Se-Zqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YEX-eG-bmw"/>
+                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="ISu-CW-oIt" secondAttribute="bottom" constant="8" id="bly-Jf-5v0"/>
+                            <constraint firstItem="WmS-Gl-lcY" firstAttribute="top" secondItem="kaF-Se-Zqe" secondAttribute="bottom" constant="30" id="ebh-Nr-0mB"/>
+                            <constraint firstItem="4Ld-p0-eSk" firstAttribute="leading" secondItem="ISu-CW-oIt" secondAttribute="trailing" constant="53" id="kjL-pm-FFC"/>
+                            <constraint firstItem="kaF-Se-Zqe" firstAttribute="top" secondItem="4Ld-p0-eSk" secondAttribute="top" id="ktc-c8-oPq"/>
+                            <constraint firstItem="ISu-CW-oIt" firstAttribute="leading" secondItem="kaF-Se-Zqe" secondAttribute="trailing" constant="53" id="oWG-Zj-KZr"/>
+                            <constraint firstItem="kaF-Se-Zqe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pV7-9q-CDA"/>
+                            <constraint firstItem="kaF-Se-Zqe" firstAttribute="bottom" secondItem="4Ld-p0-eSk" secondAttribute="bottom" id="wFu-Rq-459"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="To Do List" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="always" id="8dx-NE-bPH">
