@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+    
     var toDos = [
     ToDo(title: "Make vanilla puding"),
     ToDo(title: "Put the puding in a mayo"),
@@ -26,6 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          
         tableView.dataSource = self
         tableView.delegate = self
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,7 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
                     let indexPath1 = IndexPath(row: self.toDos.count - 1, section: 0)
                     self.tableView.insertRows(at: [indexPath1], with: UITableView.RowAnimation.right)
-                        
+            
                 }))
         
         present(alert, animated: true, completion: nil)
@@ -95,7 +96,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    
-
+        
 }
+    
+    
 
